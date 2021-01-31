@@ -2,16 +2,32 @@
     {
         "categoria": "Motherboard",
         "marca": "Gigabyte",
-        "nombre": "Motherboard B450M",
-        "precio": 11000,
+        "nombre": "B450M",
+        "precio": 13000,
         "img": "img/gigabyte-b450m.png",
         "id": "1"
+    },
+    {
+        "categoria": "Motherboard",
+        "marca": "Asus",
+        "nombre": "Prime X570-P",
+        "precio": 18000,
+        "img": "img/asus-prime-x570-p.png",
+        "id": "91"
+    },
+    {
+        "categoria": "Motherboard",
+        "marca": "TUF",
+        "nombre": "Gaming Z490-PLUS",
+        "precio": 28000,
+        "img": "img/tuf-gaming-z490-plus.png",
+        "id": "92"
     },
     {
         "categoria": "Procesador",
         "marca": "AMD",
         "nombre": "Ryzen 5 5600x",
-        "precio": 33000,
+        "precio": 40000,
         "img": "img/r5-5600x.png",
         "id": "2"
     },
@@ -19,15 +35,15 @@
         "categoria": "Procesador",
         "marca": "AMD",
         "nombre": "Ryzen 7 5800x",
-        "precio": 42000,
+        "precio": 62000,
         "img": "img/r7-5800x.png",
         "id": "3"
     },
     {
         "categoria": "Motherboard",
         "marca": "AMD",
-        "nombre": "Ryzen 7 3800",
-        "precio": 38000,
+        "nombre": "Ryzen 7 3700",
+        "precio": 45000,
         "img": "img/r7-3700k.png",
         "id": "4"
     },
@@ -43,7 +59,7 @@
         "categoria": "Procesador",
         "marca": "Intel",
         "nombre": "i7 10700k",
-        "precio": 32000,
+        "precio": 42000,
         "img": "img/i7.png",
         "id": "6"
     },
@@ -51,7 +67,7 @@
         "categoria": "Memoria RAM",
         "marca": "HyperX",
         "nombre": "DDR4 8GB 2600MHz",
-        "precio": 6300,
+        "precio": 4500,
         "img": "img/hyperx-ram-8gb-2600.png",
         "id": "7"
     },
@@ -59,7 +75,7 @@
         "categoria": "Grafica",
         "marca": "Nvidia",
         "nombre": "RTX 3060ti",
-        "precio": 92000,
+        "precio": 155000,
         "img": "img/3060ti.png",
         "id": "8"
     },
@@ -67,7 +83,7 @@
         "categoria": "Grafica",
         "marca": "Nvidia",
         "nombre": "RTX 3070",
-        "precio": 125000,
+        "precio": 185000,
         "img": "img/3070.png",
         "id": "9"
     },
@@ -75,7 +91,7 @@
         "categoria": "Almacenamiento",
         "marca": "Gigabyte",
         "nombre": "SSD 240GB",
-        "precio": 4600,
+        "precio": 4500,
         "img": "img/ssd-240gb-gigabyte.png",
         "id": "10"
     },
@@ -83,15 +99,23 @@
         "categoria": "Gabinete",
         "marca": "Corsair",
         "nombre": "Carbide Series 275r",
-        "precio": 18600,
+        "precio": 19600,
         "img": "img/corsair-275r.png",
         "id": "11"
+    },
+    {
+        "categoria": "Gabinete",
+        "marca": "Corsair",
+        "nombre": "Crystal Series 280x",
+        "precio": 28200,
+        "img": "img/corsair-280x.png",
+        "id": "81"
     },
     {
         "categoria": "Fuente de poder",
         "marca": "Cooler Master",
         "nombre": "Elite v3 600w",
-        "precio": 11600,
+        "precio": 12400,
         "img": "img/cooler-master-v3-600w.png",
         "id": "12"
     }

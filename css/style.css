@@ -368,6 +368,7 @@ left: 17vw;
     -ms-border-radius: 25px;
     -o-border-radius: 25px;
 }
+
 .agregar-producto-inicio:hover{
     width: 130px;
     height: 130px;
@@ -466,25 +467,48 @@ width: 150px;
     font-size: 28px;
 }
 
+.fondo-boton{
+    position: relative;
+    top: 32px;
+    width: 60px;
+    height: 2px;
+    border-radius: 3px;
+    background-color:yellow;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    z-index: -5;
+    box-shadow:  0px 5px 13px 0px rgb(251, 255, 0);
+}
+
 .agregar-producto{
     border-style: none;
     position: absolute;
-    background-color: #FFDC00;
+    color: white;
+    background-color:rgba(0, 0, 0, 0.1);
+    box-shadow:  0px 5px 13px 0px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3px);
     width: 150px;
     transition: 0.35s;
     -webkit-transition: 0.35s;
     -moz-transition: 0.35s;
     -ms-transition: 0.35s;
     -o-transition: 0.35s;
+    z-index: 1;
 }
 .agregar-producto:hover {
-    background-color: #ffee00;
-    width: 180px;
-    font-size: 17px;
+    background-color:rgba(0, 0, 0, 0.15);
+    box-shadow:  0px 5px 13px 0px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(5px);
+    width: 170px;
+    color: yellow;
 }
 
 .agregar-producto:active {
-    background-color: #ffcc00;
+    background-color:rgba(0, 0, 0, 0.20);
+    box-shadow:  0px 5px 13px 0px rgba(0, 0, 0, 0.20);
+    backdrop-filter: blur(10px);
     font-size: 18px;
 }
 /* Consulta */
