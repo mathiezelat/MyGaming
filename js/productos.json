@@ -60,7 +60,7 @@
         "marca": "Intel",
         "nombre": "i7 10700k",
         "precio": 42000,
-        "img": "img/i7.png",
+        "img": "img/i7-10700k.png",
         "id": "6"
     },
     {
@@ -91,7 +91,7 @@
         "categoria": "Almacenamiento",
         "marca": "Gigabyte",
         "nombre": "SSD 240GB",
-        "precio": 4500,
+        "precio": 4000,
         "img": "img/ssd-240gb-gigabyte.png",
         "id": "10"
     },

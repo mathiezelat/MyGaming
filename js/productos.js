@@ -36,7 +36,6 @@ function cargarListaProductos(productos) {
 	productos.forEach((producto, index) => {
         const listaProductos = document.querySelector('#lista-productos');
 		const { categoria, marca, nombre, precio, img, id } = producto;
-
 		const divProducto = document.createElement('div');
 		divProducto.classList.add('col-lg-2', 'col-md-3', 'col-sm-5','col-xs-4', 'd-flex', 'justify-content-center','aling-item-center', 'section-producto');
 		divProducto.innerHTML = `
@@ -57,7 +56,6 @@ function cargarListaProductos(productos) {
                 </div>
             </div>
         `
-        
         listaProductos.appendChild(divProducto);
     })
     $('#lista-productos').fadeIn(500);
