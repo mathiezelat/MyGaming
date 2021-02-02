@@ -21,9 +21,8 @@
     /* src: url("../fonts/KontoraSemiBold.otf") format("opentype"); */
     /* src: url("../fonts/KontoraThin.otf") format("opentype"); */
 }
-
 body{
-    background-image: linear-gradient(to left, #3c89ce, #009cd8, #00afdd, #00c0db, #10d0d6);
+    background-image: linear-gradient(to left, #308bdb, #009cd8, #00afdd, #00c0db, #19d5db);
 }
 
 
@@ -401,7 +400,7 @@ visibility: hidden;
 .buscador{
     border-style: none;
     margin-bottom: 20px;
-    background-color:rgba(255, 255, 255, 0.1);
+    background-color:rgba(0, 0, 0, 0.1);
     text-align: center;
     width: 40vw;
     font-size: 20px;
@@ -417,14 +416,14 @@ visibility: hidden;
     -o-transition: 0.3s;
 }
 .buscador:hover{
-    background-color:rgba(255, 255, 255, 0.15);
+    background-color:rgba(0, 0, 0, 0.15);
 }
 .buscador:focus{
-    background-color:rgba(255, 255, 255, 0.2);
+    background-color:rgba(0, 0, 0, 0.25);
 }
 
 .buscador::placeholder {
-    color: rgba(0, 0, 0, 0.3);
+    color: rgba(255, 255, 255, 0.623);
 }
 
 .submit-buscador{
@@ -432,11 +431,11 @@ visibility: hidden;
 }
 /* Buscador */
 .section-producto{
-    background-color:rgba(255, 255, 255, 0.1);
+    background-color:rgba(255, 255, 255, 0.05);
     box-shadow:  0px 5px 13px 0px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(40px);
-    padding: 0px 0px 50px 0px;
-    margin:6px;
+    padding: 0px 0px 60px 0px;
+    margin:8px;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -450,10 +449,9 @@ visibility: hidden;
 }
 
 .section-producto:hover{
-    background-color:rgba(255, 255, 255, 0.15);
+    background-color:rgba(255, 255, 255, 0.09);
     box-shadow:  0px 5px 13px 0px rgba(0, 0, 0, 0.2);
 }
-
 
 .imagen-producto{
 width: 150px;
@@ -467,47 +465,37 @@ width: 150px;
     font-size: 28px;
 }
 
-.fondo-boton{
-    position: relative;
-    top: 32px;
-    width: 60px;
-    height: 2px;
-    border-radius: 3px;
-    background-color:yellow;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    -ms-border-radius: 3px;
-    -o-border-radius: 3px;
-    z-index: -5;
-    box-shadow:  0px 5px 13px 0px rgb(251, 255, 0);
-}
 .agregar-producto{
     border-style: none;
     position: absolute;
-    color: white;
-    background-color:rgba(0, 0, 0, 0.1);
-    box-shadow:  0px 5px 13px 0px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(3px);
-    width: 150px;
+    border-radius:5px;
+    padding: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: rgb(0, 0, 0);
+    background-color: #DFDF00;
+    width: 160px;
     transition: 0.35s;
     -webkit-transition: 0.35s;
     -moz-transition: 0.35s;
     -ms-transition: 0.35s;
     -o-transition: 0.35s;
     z-index: 1;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    -ms-border-radius:5px;
+    -o-border-radius:5px;
+    font-size: 17px;
 }
 .agregar-producto:hover {
-    background-color:rgba(0, 0, 0, 0.15);
-    box-shadow:  0px 5px 13px 0px rgba(0, 0, 0, 0.15);
-    backdrop-filter: blur(5px);
+    background-color: black;
+    color: #DFDF00;
     width: 170px;
-    color: yellow;
 }
 
 .agregar-producto:active {
-    background-color:rgba(0, 0, 0, 0.20);
-    box-shadow:  0px 5px 13px 0px rgba(0, 0, 0, 0.20);
-    backdrop-filter: blur(10px);
+    background-color: black;
+    color: #DFDF00;
     font-size: 18px;
 }
 /* Consulta */
@@ -516,22 +504,24 @@ width: 150px;
     padding: 0;
 }
 .formulario input{
-    background-color: rgba(255, 255, 255, 0.15);
-    box-shadow:  0px 5px 13px 0px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.05);
     border-style: hidden;
     color: #fff;
     margin: 0;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
 }
 .formulario input:focus{
-    background-color: rgba(255, 255, 255, 0.25);
-    box-shadow:  0px 5px 13px 0px rgba(0, 0, 0, 0.3);
+    background-color: rgba(255, 255, 255, 0.15);
     border-style: hidden;
     color: #fff;
     margin: 0;
 }
 .formulario input:hover{
-    background-color: rgba(255, 255, 255, 0.20);
-    box-shadow:  0px 5px 13px 0px rgba(0, 0, 0, 0.25);
+    background-color: rgba(255, 255, 255, 0.10);
     border-style: hidden;
     color: #fff;
     margin: 0;
@@ -540,45 +530,80 @@ width: 150px;
 color: rgba(255, 255, 255, 0.85);;
 }
 .boton-enviar{
-    background-color: rgba(0, 0, 0, 0.10);
+    background-color: rgba(0, 0, 0, 0.05);
     color: white;
     font-style: "Raleway", sans-serif;
     font-size: 20px;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
 }
 .boton-enviar:hover{
-    background-color: rgba(0, 0, 0, 0.15);
+    background-color: rgba(0, 0, 0, 0.10);
     color: white;
 }
 .boton-enviar:active{
-    background-color: rgba(0, 0, 0, 0.20);
+    background-color: rgba(0, 0, 0, 0.15);
     color: white;
 }
 .formulario textarea{
-    background-color: rgba(255, 255, 255, 0.15);
-    box-shadow:  0px 5px 13px 0px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.05);
     border-style: hidden;
     color: #fff;
     margin: 0;
     padding: 10px 0px 100px 10px;
     border-style: none;
     resize: none;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
 }
 .formulario textarea:focus{
-    background-color: rgba(255, 255, 255, 0.25);
-    box-shadow:  0px 5px 13px 0px rgba(0, 0, 0, 0.3);
+    background-color: rgba(255, 255, 255, 0.15);
     border-style: hidden;
     color: #fff;
     margin: 0;
 }
 .formulario textarea:hover{
-    background-color: rgba(255, 255, 255, 0.20);
-    box-shadow:  0px 5px 13px 0px rgba(0, 0, 0, 0.25);
+    background-color: rgba(255, 255, 255, 0.10);
     border-style: hidden;
     color: #fff;
     margin: 0;
 }
 .formulario textarea::placeholder{
     color: rgba(255, 255, 255, 0.85);;
+}
+/* Contacto*/
+.body-contacto{
+    background: linear-gradient(hsl(256, 75%, 66%), hsl(240, 73%, 65%));
+}
+.fondo-contact{
+    background-color:rgba(255, 255, 255, 0.05);
+    box-shadow:  0px 5px 13px 0px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(40px);
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    height: 559px;
+    width: 55vw;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 5rem;
+    justify-content: center;
+    padding: 10px;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0002);
+    margin-top: 10px;
 }
 /* Consulta */
 /* Section/Carrito */
@@ -597,7 +622,7 @@ cursor: pointer;
 user-select: none; 
 }
 .section-producto-carrito{
-    background-color:rgba(255, 255, 255, 0.15);
+    background-color:rgba(255, 255, 255, 0.05);
     box-shadow:  0px 5px 13px 0px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(40px);
     margin: 10px;
@@ -613,7 +638,7 @@ user-select: none;
     -o-transition: 0.3s;
 }
 .section-producto-carrito:hover{
-    background-color:rgba(255, 255, 255, 0.2);
+    background-color:rgba(255, 255, 255, 0.1);
     box-shadow:  0px 5px 13px 0px rgba(0, 0, 0, 0.15);
 }
 .container-productos{
@@ -628,22 +653,106 @@ user-select: none;
 .producto-carrito-nombre{
     top:10px;
 }
+
 /*Ayuda */
-.accordion-button:focus {
-    z-index: 3;
-    border-color: rgba(0, 0, 0, 0.15);
-    outline: 0;
-    box-shadow: none;
-    background-color:rgba(0, 0, 0, 0.05);
+.ayuda-accordion{
+    height: 85vh;
+    display: grid;
+    justify-content: center;
+    margin-top: 50px;
+}
+.wrapper{
+    background-color:rgba(255, 255, 255, 0.05);
+    box-shadow:  0px 5px 13px 0px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(40px);
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    height: 509px;
+    width: 50vw;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 5rem;
+    justify-content: center;
+    padding: 10px;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0002);
+}
+.question_answer_accordion > .answer{
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    overflow: hidden;
+    max-height: 0;
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+}
+.active > .answer{
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: block;
+    padding-bottom: 1.3rem;
+    color: white;
+    max-height: 100px;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+.accordion__wrapper{
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.accordion_questions{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.question_answer_accordion{
+    width: 90%;
+    border-bottom: 0.05px solid #e8e8ea;
 }
 
-
-.accordion-button:not(.collapsed) {
-    color: #5744ff;;
-    background-color: rgba(0, 0, 0, 0.10);
+.title_accordion{
+    font-size: 3rem;
+    margin-top: 0px;
+    display: grid;
+    justify-content: center;
 }
-.accordion-button{
-    background-color:rgba(0, 0, 0, 0.05);
+.question_title{
+    font-size: 1.2rem;
+    margin: 1.4rem 0rem;
+    color: white;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+.question{
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
     transition: 0.3s;
     -webkit-transition: 0.3s;
     -moz-transition: 0.3s;
@@ -651,6 +760,51 @@ user-select: none;
     -o-transition: 0.3s;
 }
 
+.question img{
+    -moz-user-select: none; 
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
+    align-self: center;
+    transform: rotate(0deg);
+    transition: all 0.2s ease-in;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    -ms-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+}
+.active img{
+    -moz-user-select: none; 
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
+    transform: rotate(180deg);
+    transition: all 0.2s ease-in;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    -ms-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+}
+.active h3{
+    color: #5744ff;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+
+.ayuda-body{
+    background: linear-gradient(hsl(263, 75%, 66%), hsl(240, 73%, 65%));
+}
 /* Vaciar carrito */
 .boton-vaciar-carrito{
     background-color:rgba(0, 0, 0, 0.05);
@@ -668,7 +822,6 @@ user-select: none;
     border-style: none;
     color: #fff;
 }
-
 /* Carrito Vacio */
 .producto-carrito-vacio-texto{
     height: 5vw;
@@ -725,6 +878,8 @@ user-select: none;
     font-size:30px;
     margin: 30px 0px 0px 0px;
 }
+.body-carrito-fondo{
+    background: linear-gradient(hsl(239, 75%, 66%), hsl(240, 73%, 65%));}
 /* Footer */
 .texto-footer-link{
     text-decoration: none;
@@ -1067,6 +1222,12 @@ ul {
             left: 63vw;
             top: 45vh;
         }
+        .wrapper{
+            width: 70vw;
+        }
+        .fondo-contact{
+            width: 70vw;
+        }
 }
 @media screen and (max-width: 1300px) and (min-width: 1200px) {
     .nav--carrito {
@@ -1186,6 +1347,12 @@ ul {
             left: 60vw;
             top: 45vh;
         }
+        .wrapper{
+            width: 70vw;
+        }
+        .fondo-contact{
+            width: 75vw;
+        }
 }
 @media screen and (max-width: 1200px) and (min-width: 0px) {
     .nav--carrito {
@@ -1222,7 +1389,12 @@ ul {
         padding-top: 20px;
         padding-bottom: 20px;
     }
-
+    .wrapper{
+        width: 95vw;
+    }
+    .fondo-contact{
+        width: 95vw;
+    }
 }
 
 @media screen and (max-width: 1200px) and (min-width: 990px) {

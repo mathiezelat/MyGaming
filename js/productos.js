@@ -50,8 +50,7 @@ function cargarListaProductos(productos) {
                     <p>$<span class="precio">${precio}<span></p>
                     </div>
                     <div class="d-flex justify-content-center col-12">
-                    <div class="fondo-boton"></div>
-                    <a class="btn agregar-producto" href="#" role="button" data-id="${id}">Agregar producto</a>
+                    <a class="btn agregar-producto" href="#" role="button" data-id="${id}">Añadir al carrito</a>
                     
                 </div>
             </div>
