@@ -2,12 +2,16 @@
 const contenedorCarrito = document.querySelector('#lista-carrito');
 const contenedorVaciarCarrito = document.querySelector('#vaciar-boton-carrito');
 const contenedorComprarCarrito = document.querySelector('#comprar-boton-carrito');
+const contenedorPagoCarrito = document.querySelector('#pago-carrito');
 
 /* Listeners */
 contenedorCarrito.addEventListener('click', sumarProducto);
 contenedorCarrito.addEventListener('click', restarProducto);
 contenedorVaciarCarrito.addEventListener('click', vaciarCarrito);
 contenedorCarrito.addEventListener('click', quitarProducto);
+contenedorComprarCarrito.addEventListener('click', insertarEnvioHTML);
+contenedorPagoCarrito.addEventListener('click', insertarPagoHTML);
+contenedorPagoCarrito.addEventListener('click', insertarPagoFinalizadoHTML);
 
 /* Carga el contenido en el carrito */
 document.addEventListener('DOMContentLoaded', () => {
@@ -132,12 +136,11 @@ function insertarCarritoHTML(){
                 
                 
                 `
-                
                 contenedorCarrito.appendChild(row);
             })
             total.innerHTML = `$${sumaPrecios}`
-
 }
+
 function limpiarCarrito(){
     while(contenedorCarrito.firstChild){
         contenedorCarrito.removeChild(contenedorCarrito.firstChild);
@@ -182,7 +185,7 @@ function insertarComprarHTML(){
                 <p>Total:</p>
                 <p class="precio-total">$0</p>
             </div>
-            <a class="btn boton-comprar-carrito" href="#" role="button" id="comprar-carrito">Comprar</a>
+            <a class="btn boton-comprar-carrito envio-carrito" href="#" role="button" id="comprar-carrito">Comprar</a>
         </div>
     </div>
 </div>
@@ -211,5 +214,158 @@ function insertarVaciarHTML(){
 function limpiarVaciarCarrito(){
     while(contenedorVaciarCarrito.firstChild){
         contenedorVaciarCarrito.removeChild(contenedorVaciarCarrito.firstChild);
+    }
+}
+
+function insertarEnvioHTML(e){
+    if(e.target.classList.contains('envio-carrito')){
+        limpiarCarrito()
+        limpiarVaciarCarrito()
+        limpiarComprarCarrito()
+        const row = document.createElement('div');
+        row.classList.add('col-lg-12', 'col-md-12', 'col-sm-12', 'd-flex', 'justify-content-center', 'section-producto-carrito-comprar-carrito');
+        row.innerHTML = `
+        <div class="row justify-content-center d-flex">
+        <div class="fondo-pago">
+        <section class="col-lg-12 col-md-12 col-sm-12 justify-content-center">
+            <p class="titulo-pagina">Datos de envio</p>
+            <div class="justify-content-center d-flex align-items-center">
+            </div>
+            <div class="row justify-content-center d-flex">
+                <div class="container-fluid row d-flex">
+                    <div class="mb-1 col-lg-5 col-md-5 col-sm-5 formulario  envio-form">
+                        <label for="nombre" class="form-label"></label>
+                        <input type="text" class="form-control" placeholder="Nombre" minlength="0" maxlength="10">
+                    </div>
+                    <div class="mb-1 col-lg-5 col-md-5 col-sm-5 formulario  envio-form">
+                        <label for="apellido" class="form-label"></label>
+                        <input type="text" class="form-control" placeholder="Apellido" minlength="0" maxlength="10">
+                    </div>
+                    <div class="mb-1 col-lg-5 col-md-5 col-sm-5 formulario  envio-form">
+                        <label for="direccion" class="form-label"></label>
+                        <input type="text" class="form-control" placeholder="Direccion" minlength="0" maxlength="18">
+                    </div>
+                    <div class="mb-1 col-lg-1 col-md-1 col-sm-1 formulario  envio-form">
+                        <label for="depto" class="form-label"></label>
+                        <input type="number" class="form-control number-arrow" min="0" max="99" minlength="0" maxlength="2" placeholder="Depto">
+                    </div>
+                    <div class="mb-1 col-lg-4 col-md-4 col-sm-4 formulario  envio-form">
+                        <label for="codigopostal" class="form-label"></label>
+                        <input type="number" class="form-control number-arro" min="0" max="9999" minlength="0" maxlength="4" placeholder="Codigo Postal">
+                    </div>
+                    <div class="mb-1 col-lg-4 col-md-4 col-sm-4 formulario  envio-form">
+                        <label for="phone" class="form-label"></label>
+                        <input type="tel" class="form-control" placeholder="Telefono"  pattern="[0-9]{2}-[0-9]{4}-[0-9]{4}" minlength="0" maxlength="10">
+                    </div>
+                    <div class="mb-1 col-lg-4 col-md-4 col-sm-4 formulario  envio-form">
+                        <label for="email" class="form-label"></label>
+                        <input type="email" class="form-control" placeholder="Correo" minlength="0" maxlength="28">
+                    </div>
+                    <div class="mb-1 col-lg-4 col-md-4 col-sm-4 formulario  envio-form">
+                        <label for="ciudad" class="form-label"></label>
+                        <input type="text" class="form-control" placeholder="Ciudad" minlength="0" maxlength="18">
+                    </div>
+                    <div class="mb-5 col-lg-4 col-md-4 col-sm-4 formulario  envio-form">
+                        <label for="provincia" class="form-label"></label>
+                        <input type="text" class="form-control" placeholder="Provincia" minlength="0" maxlength="18">
+                    </div>
+                    <div class="col-12 text-center">
+                        <button type="submit" class="btn boton-enviar pago-carrito">Siguiente</button>
+                    </div>
+                </div>
+                </div>
+            </section>
+        </div>
+        </div>
+        `
+        contenedorPagoCarrito.appendChild(row);
+    }
+}
+
+function limpiarPagoCarrito(){
+    while(contenedorPagoCarrito.firstChild){
+        contenedorPagoCarrito.removeChild(contenedorPagoCarrito.firstChild);
+    }
+}
+function insertarPagoHTML(e){
+    if(e.target.classList.contains('pago-carrito')){
+        limpiarPagoCarrito()
+        limpiarCarrito()
+        limpiarVaciarCarrito()
+        limpiarComprarCarrito()
+        const row = document.createElement('div');
+        row.classList.add('col-lg-12', 'col-md-12', 'col-sm-12', 'd-flex', 'justify-content-center', 'section-producto-carrito-comprar-carrito');
+        row.innerHTML = `
+        <div class="row justify-content-center d-flex">
+        <div class="fondo-pago siguiente-pago">
+        <section class="col-lg-12 col-md-12 col-sm-12 justify-content-center">
+            <p class="titulo-pagina">Datos de pago</p>
+            <div class="justify-content-center d-flex align-items-center">
+            </div>
+            <div class="row justify-content-center d-flex">
+                <div class="container-fluid row d-flex">
+                    <div class="mb-1 col-lg-5 col-md-5 col-sm-5 formulario  envio-form">
+                        <label for="nombre" class="form-label"></label>
+                        <input type="text" class="form-control" placeholder="Nombre" minlength="0" maxlength="10">
+                    </div>
+                    <div class="mb-1 col-lg-5 col-md-5 col-sm-5 formulario  envio-form">
+                        <label for="apellido" class="form-label"></label>
+                        <input type="text" class="form-control" placeholder="Apellido" minlength="0" maxlength="10">
+                    </div>
+                    <div class="mb-1 col-lg-5 col-md-5 col-sm-5 formulario  envio-form">
+                        <label for="numbertarjet" class="form-label"></label>
+                        <input type="number" class="form-control" placeholder="Numero de tarjeta" min="0" max="9999999999">
+                    </div>
+                    <div class="mb-1 col-lg-4 col-md-4 col-sm-4 formulario  envio-form">
+                        <label for="fechaCad" class="form-label"></label>
+                        <input type="month" class="form-control" placeholder="Fecha de caducidad" min="2021-01" max="2035-12">
+                    </div>
+                    <div class="mb-5 col-lg-1 col-md-1 col-sm-1 formulario  envio-form">
+                        <label for="cvv" class="form-label"></label>
+                        <input type="number" class="form-control" placeholder="CVV" min="0" max="999">
+                    </div>
+                    <div class="col-12 text-center">
+                        <button type="submit" class="btn boton-enviar pago">Pagar</button>
+                    </div>
+                </div>
+                </div>
+            </section>
+        </div>
+        </div>
+        `
+        contenedorPagoCarrito.appendChild(row);
+    }
+}
+function insertarPagoFinalizadoHTML(e){
+    if(e.target.classList.contains('pago')){
+        limpiarPagoCarrito()
+        limpiarCarrito()
+        limpiarVaciarCarrito()
+        limpiarComprarCarrito()
+        articulosCarrito = [];
+        cantidadProductos();
+        guardarStorage();
+        limpiarComprarCarrito();
+        limpiarVaciarCarrito();
+        const row = document.createElement('div');
+        row.classList.add('col-lg-12', 'col-md-12', 'col-sm-12', 'd-flex', 'justify-content-center', 'section-producto-carrito-comprar-carrito');
+        row.innerHTML = `
+        <div class="row justify-content-center d-flex">
+        <div class="fondo-pago compra-finalizada">
+        <section class="col-lg-12 col-md-12 col-sm-12 justify-content-center">
+            <p class="titulo-pagina thx-compra">¡Gracias por tu compra!</p>
+            <div class="justify-content-center d-flex align-items-center">
+            </div>
+            <div class="row justify-content-center d-flex">
+                    <div class="col-12 text-center">
+                        <a class="btn boton-carrito-vacio" href="productos.html" role="button">Volver a productos</a>
+                    </div>
+                </div>
+                </div>
+            </section>
+        </div>
+        </div>
+        `
+        contenedorPagoCarrito.appendChild(row);
     }
 }

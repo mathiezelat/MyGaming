@@ -987,6 +987,62 @@ ul {
 .footer-redes a{
     margin: 5px;
 }
+/* Envio/pago */
+.fondo-pago{
+    background-color:rgba(255, 255, 255, 0.05);
+    box-shadow:  0px 5px 13px 0px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(40px);
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    height: 510px;
+    width: 55vw;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 5rem;
+    justify-content: center;
+    padding: 10px;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0002);
+    margin-top: 10px;
+}
+
+.siguiente-pago{
+    height: 350px;
+}
+.compra-finalizada{
+    height: 150px;
+}
+.envio-form{
+    margin: 5px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+input[type=number] {
+    -moz-appearance: textfield;
+}
+input[type="month"]::before{
+    content: attr(placeholder) !important;
+    color: #fff;
+    width: 100%;
+}
+
+input[type="month"]:focus::before,
+input[type="month"]:active::before {
+    content: "";
+    width: 0%;
+    visibility: hidden;
+}
+
 /* Media Query*/
 @media screen and (max-width: 1600px) and (min-width: 1400px) {
     .nav--carrito {
@@ -1353,6 +1409,16 @@ ul {
         .fondo-contact{
             width: 75vw;
         }
+        .fondo-pago{
+            width: 75vw;
+        }
+        
+        .siguiente-pago{
+            height: 350px;
+        }
+        .compra-finalizada{
+            height: 150px;
+        }
 }
 @media screen and (max-width: 1200px) and (min-width: 0px) {
     .nav--carrito {
@@ -1394,6 +1460,20 @@ ul {
     }
     .fondo-contact{
         width: 95vw;
+    }
+    .fondo-pago{
+        width: 95vw;
+        height: 850px;
+    }
+    
+    .siguiente-pago{
+        height: 550px;
+    }
+    .compra-finalizada{
+        height: 150px;
+    }
+    .thx-compra{
+        font-size: 2rem;
     }
 }
 
