@@ -1495,7 +1495,7 @@ input[type="month"]:active::before {
             height: 350px;
         }
         .compra-finalizada{
-            height: 150px;
+            height: 165px;
         }
 }
 @media screen and (max-width: 1200px) and (min-width: 0px) {
@@ -1548,7 +1548,7 @@ input[type="month"]:active::before {
         height: 550px;
     }
     .compra-finalizada{
-        height: 150px;
+        height: 165px;
     }
     .thx-compra{
         font-size: 2rem;
