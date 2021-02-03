@@ -460,9 +460,87 @@ width: 150px;
     color: white;
 }
 
-
 .precio{
     font-size: 28px;
+}
+#categorias-filtrar li{
+    list-style:none;
+    margin: 0;
+}
+.categorias{
+    margin-bottom: 7px;
+    margin-top: -10px;
+
+}
+
+#categorias-filtrar a{
+    display: flex;
+    flex-flow: row nowrap;
+    color: white;
+    text-decoration: none;
+    list-style:none;
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-top: 3px;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    font-size: 14px;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+#categorias-filtrar a:hover{
+    background-color: rgba(0, 0, 0, 0.2);
+}
+#categorias-filtrar a:focus{
+    background-color: rgba(0, 0, 0, 0.25);
+}
+#categorias-filtrar{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin: 0;
+}
+.categoria{
+    font-size: 11px;
+    background-color: rgba(255, 255, 255, 0.09);
+    padding-left:10px;
+    padding-right: 10px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    margin: 2px;
+}
+.Procesador{
+    background-color: rgb(240, 62, 49);
+}
+.Motherboard{
+    background-color: rgb(98, 0, 255);
+}
+.Gabinete{
+    background-color: rgb(0, 145, 202);
+}
+.Memoria{
+    background-color: rgb(0, 202, 77);
+}
+.Grafica{
+    background-color: rgb(13, 0, 194);
+}
+.Almacenamiento{
+    background-color: rgb(117, 0, 212);
+}
+.Fuente{
+    background-color: rgb(255, 0, 140);
 }
 
 .agregar-producto{
@@ -1669,6 +1747,10 @@ input[type="month"]:active::before {
             left: 55vw;
             top: 45vh;
         }
+        #categorias-filtrar a{
+            font-size: 0.7em;
+            margin: 1px;
+        }
 }
 @media screen and (max-width: 600px) and (min-width: 500px) {
     .carrito-vacio-texto{
@@ -1749,7 +1831,10 @@ input[type="month"]:active::before {
             left: 45vw;
             top: 40vh;
         }
-
+        #categorias-filtrar a{
+            font-size: 0.8em;
+            margin: 0.5px;
+        }
 }
 @media screen and (max-width: 500px) and (min-width: 375px) {
     .carrito-vacio-texto{
@@ -1935,8 +2020,6 @@ input[type="month"]:active::before {
         background-color:rgba(255, 255, 255, 0.15);
         box-shadow:  0px 5px 13px 0px rgba(0, 0, 0, 0.2);
     }
-    
-    
     .imagen-producto{
     width: 125px;
     transition: 0.3s;
@@ -1945,7 +2028,6 @@ input[type="month"]:active::before {
     -ms-transition: 0.3s;
     -o-transition: 0.3s;
 }
-    
     
     .precio{
         font-size: 26px;

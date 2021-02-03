@@ -1,7 +1,10 @@
 /* Selectores */
 buscadorFormulario = document.querySelector('#formulario');
+buscadorBotones = document.querySelector('#categorias-filtrar');
 /* Listeners */
 buscadorFormulario.addEventListener('submit', filtrarProductos);
+document.addEventListener('DOMContentLoaded', filtrarProductosBoton);
+
 /* Funciones */
 function filtrarProductos(e){
     e.preventDefault();
@@ -12,6 +15,7 @@ function filtrarProductos(e){
         success: mostrarProductos
     });
 }
+
 document.addEventListener('DOMContentLoaded', () =>{
     $.ajax({
         url: 'js/productos.json',
@@ -20,6 +24,15 @@ document.addEventListener('DOMContentLoaded', () =>{
         }
     });
 });
+function filtrarProductosBoton(e){
+    e.preventDefault();
+    $.ajax({
+        url:'js/productos.json',
+        data: 'json',
+        dataType: 'json',
+        success: mostrarProductosBoton
+    });
+}
 function mostrarProductos(result) {
     const busqueda = $('#buscador').val();
     const resultado = result.filter(producto => {
@@ -30,6 +43,24 @@ function mostrarProductos(result) {
     })
     limpiarProductos()
     cargarListaProductos(resultado);
+}
+function mostrarProductosBoton(result) {   
+    buscadorBotones.addEventListener('click', botonCategoria);
+    function botonCategoria(e){
+        e.preventDefault();
+        const boton = e.path[0].id;
+        const id = e.path[0].id;
+        console.log(id)
+        const resultado = result.filter(producto => {
+            const productosCategoria = producto.categoria.toLocaleLowerCase().includes(boton.toLocaleLowerCase());
+            const productosTodo = producto.catall.toLocaleLowerCase().includes(boton.toLocaleLowerCase());
+            const productos = productosCategoria + productosTodo;
+            return productos;
+        })
+        limpiarProductos()
+        cargarListaProductos(resultado);
+    }
+
 }
 function cargarListaProductos(productos) {
     $('#lista-productos').hide();
@@ -42,6 +73,9 @@ function cargarListaProductos(productos) {
         <div class="container-fluid justify-content-center" id="producto-tienda">
             <div class="d-flex justify-content-center col-12">
                     <img src="${img}" alt="" class="imagen-producto">
+                </div>
+                <div class="d-flex justify-content-center col-12">
+                    <p class="categoria ${categoria}">${categoria}</p>
                 </div>
                 <div class="d-flex justify-content-center col-12">
                     <p class="nombre-producto">${marca} ${nombre}</p>
