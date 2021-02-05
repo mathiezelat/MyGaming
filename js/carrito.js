@@ -77,8 +77,8 @@ function sumarProducto(e){
         const producto = e.target.parentElement;
         const productosCantidad = producto.querySelectorAll('.cantidad-productos');
         let cantidad = productosCantidad.length;
-        console.log(articulosCarrito.map(producto => producto.id == id))
-        console.log(cantidad)
+        // console.log(articulosCarrito.map(producto => producto.id == id))
+        // console.log(cantidad)
         articulosCarrito.map(producto => {
             if (producto.id == id && producto.cantidad < 25){
                 producto.cantidad++;
@@ -93,8 +93,8 @@ function restarProducto(e){
         const producto = e.target.parentElement;
         const productosCantidad = producto.querySelectorAll('.cantidad-productos');
         let cantidad = productosCantidad.length;
-        console.log(articulosCarrito.map(producto => producto.id == id))
-        console.log(cantidad)
+        // console.log(articulosCarrito.map(producto => producto.id == id))
+        // console.log(cantidad)
         articulosCarrito.map(producto => {
             if (producto.id == id && producto.cantidad > 1){
                 producto.cantidad--;
@@ -106,7 +106,6 @@ function restarProducto(e){
 function insertarCarritoHTML(){
     limpiarCarrito();
     const total = document.querySelector('.precio-total');
-    total.innerHTML = " "
     let sumaPrecios = 0;
     articulosCarrito.forEach(producto => {
         const {imagen, nombre, precio, cantidad, id} = producto;
@@ -136,11 +135,26 @@ function insertarCarritoHTML(){
                 
                 
                 `
+                total.setAttribute('data-target', sumaPrecios);
                 contenedorCarrito.appendChild(row);
             })
-            total.innerHTML = `$${sumaPrecios}`
+            function contador() {
+            const counters = document.querySelectorAll('.precio-total');
+            const speed = 250;
+            counters.forEach(counter => {
+            const updateCount = () => {
+            const target = +counter.getAttribute('data-target');
+            const count = +counter.innerText;
+            const inc = target / speed;
+            if (count < target) {
+            counter.innerText = count + inc;
+            setTimeout(updateCount, 1);
+            }
+            else {
+            counter.innerText = target;}};
+            updateCount();});}
+            contador()
 }
-
 function limpiarCarrito(){
     while(contenedorCarrito.firstChild){
         contenedorCarrito.removeChild(contenedorCarrito.firstChild);
@@ -182,8 +196,8 @@ function insertarComprarHTML(){
     <div class="d-flex align-items-center justify-content-center">
         <div class="d-flex row justify-content-center col-12">
             <div class="justify-content-center text-aling-center d-flex precio-total-div">
-                <p>Total:</p>
-                <p class="precio-total">$0</p>
+                <p>Total: <span class="sign-precio-total">$</span</p>
+                <p class="precio-total" data-target=""></p>
             </div>
             <a class="btn boton-comprar-carrito envio-carrito" href="#" role="button" id="comprar-carrito">Comprar</a>
         </div>
