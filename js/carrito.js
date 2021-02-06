@@ -140,7 +140,7 @@ function insertarCarritoHTML(){
             })
             function contador() {
             const counters = document.querySelectorAll('.precio-total');
-            const speed = 250;
+            const speed = 100;
             counters.forEach(counter => {
             const updateCount = () => {
             const target = +counter.getAttribute('data-target');
